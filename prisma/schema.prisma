@@ -1,0 +1,23 @@
+generator client {
+    provider        = "prisma-client-js"
+    previewFeatures = ["driverAdapters"]
+}
+
+datasource db {
+    provider = "sqlite"
+    url      = "file:./dev.db"
+}
+
+model Waitlist {
+    id        Int      @id @default(autoincrement())
+    email     String   @unique
+    createdAt DateTime @default(now())
+}
+
+model RateLimit {
+    key String
+    ts  DateTime
+
+    @@id([key, ts])
+    @@index([key, ts])
+}
