@@ -3,10 +3,84 @@ import { GeistSans } from "geist/font/sans";
 import type { Metadata } from "next";
 import "./globals.css";
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://paylinks.ro";
+
 export const metadata: Metadata = {
-  title: "v0 App",
-  description: "Created with v0",
-  generator: "v0.app",
+  metadataBase: new URL(siteUrl),
+  applicationName: "PayLinks",
+  title: {
+    default: "PayLinks — Acceptă plăți online rapid",
+    template: "%s · PayLinks",
+  },
+  description:
+    "Acceptă plăți online în 30 de secunde. Ideal pentru freelanceri, servicii locale, creatori și ONG-uri.",
+  keywords: [
+    "plăți online",
+    "freelanceri",
+    "servicii",
+    "creatori",
+    "ONG",
+    "donatii",
+    "link de plată",
+    "Romania",
+  ],
+  authors: [{ name: "PayLinks" }],
+  creator: "PayLinks",
+  publisher: "PayLinks",
+  generator: "Next.js",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+    },
+  },
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    url: siteUrl,
+    title: "PayLinks — Acceptă plăți online rapid",
+    description:
+      "Fii printre primii care acceptă plăți online în 30 de secunde. Perfect pentru freelanceri, servicii locale, creatori și ONG-uri.",
+    siteName: "PayLinks",
+    locale: "ro_RO",
+    images: [
+      {
+        url: "/placeholder.jpg",
+        width: 1200,
+        height: 630,
+        alt: "PayLinks",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PayLinks — Acceptă plăți online rapid",
+    description:
+      "Fii printre primii care acceptă plăți online în 30 de secunde. Perfect pentru freelanceri, servicii locale, creatori și ONG-uri.",
+    images: [
+      {
+        url: "/placeholder.jpg",
+        alt: "PayLinks",
+      },
+    ],
+  },
+  icons: {
+    icon: [
+      { url: "/favicon.ico", rel: "icon" },
+      { url: "/placeholder.svg", type: "image/svg+xml" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png" }],
+    shortcut: ["/favicon.ico"],
+  },
+  category: "technology",
+  themeColor: "#000000",
 };
 
 export default function RootLayout({
