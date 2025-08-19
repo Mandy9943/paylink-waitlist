@@ -71,14 +71,7 @@ export const metadata: Metadata = {
       },
     ],
   },
-  icons: {
-    icon: [
-      { url: "/favicon.ico", rel: "icon" },
-      { url: "/placeholder.svg", type: "image/svg+xml" },
-    ],
-    apple: [{ url: "/apple-touch-icon.png" }],
-    shortcut: ["/favicon.ico"],
-  },
+
   category: "technology",
   themeColor: "#000000",
 };
